@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>Danceclasses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Image url</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @danceclasses.each do |danceclass| %>
+      <tr>
+        <td><%= danceclass.title %></td>
+        <td><%= danceclass.description %></td>
+        <td><%= danceclass.price %></td>
+        <td> <%= link_to (image_tag danceclass.image_url, :class => "itemholsIm"), danceclass %></td>
+        <td><%= danceclass.category %></td>
+        <td><%= link_to 'Show', danceclass %></td>
+        <td><%= link_to 'Edit', edit_danceclass_path(danceclass) %></td>
+        <td><%= link_to 'Destroy', danceclass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a href="/cart/<%= danceclass.id %>" class="button">Add To Cart</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Dance class', new_danceclass_path %>
+<br>
+<%= link_to 'Back To Cart', cart_path %>
+<br>
+<%= link_to 'Home', root_path %>

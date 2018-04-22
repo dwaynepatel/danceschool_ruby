@@ -1,0 +1,2 @@
+module DanceclassesHelper
+end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @danceclass.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @danceclass.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @danceclass.price %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @danceclass.image_url %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @danceclass.category %>
+</p>
+
+<%= link_to 'Edit', edit_danceclass_path(@danceclass) %> |
+<%= link_to 'Back', danceclasses_path %>
