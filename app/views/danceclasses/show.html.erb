@@ -24,6 +24,8 @@
   <strong>Category:</strong>
   <%= @danceclass.category %>
 </p>
+<% if current_user.try(:admin?) %>
+  <%= link_to 'Edit', edit_danceclass_path(@danceclass) %> |
+	   <% end %>
 
-<%= link_to 'Edit', edit_danceclass_path(@danceclass) %> |
 <%= link_to 'Back', danceclasses_path %>

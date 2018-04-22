@@ -21,11 +21,128 @@
 
     }
     
+.home_page_main_image{  /* banner image on home page  */
+height:600px; /* height */
+ width:100%;/* full width */
+ background:  url('http://www.stardanceschool.com/images/kids-dance-classes.jpg') no-repeat top center fixed; 
+ background-size: contain;/*Resize the background image to make sure the image is fully visible  */
+  background-position: 0px 50px;
+	}
+	
+	.main-content{
+	
+		position: relative;/* positioned relative to its normal position */
+		text-align: center;/* text in the center */
+		color: white;/*colour of text */
+	}
+
+.main-content img{  /* main image on home restrict the height and width   */
+	max-height: 1000px; /*max height of image */
+}
+.main-content h3 {
+    position: absolute; /*positioned relative to its first positioned ancestor  */
+    top: 70px;
+	left: 400px;
+	font-family: "Roboto";
+	font-weight: 500;
+	font-size: 80px;
+}
+.home-btn {   /* action button on home page  */
+	position: absolute;/*positioned relative to its first positioned ancestor  */
+	background: #FF5400 none repeat scroll 0% 0%; /* background colour dont repeat add a scroll and position 0 */
+	text-decoration: none;
+	color: #FFF !important;
+	margin-top: 430px;
+	width: 250px;
+	padding: 12px;
+	border-radius: 30px;
+	top: 10%;
+	left: 900px;
+	font-size: 20px;
+	text-align: center;
+  }
+  /***********************************    FOOTER   **************************************************/
+
+.footer{  /* general footer styles  */
+	background-color:#F50;  /* background colour */
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12); /* add a shadow */
+	box-sizing: border-box;/* Include padding and border in the element's total width and height */
+	width: 100%; /*full width  */
+	text-align: left;/*keep to the left  */
+	font: bold 16px sans-serif;/*bold text size and font  */
+	padding: 55px 50px; /*padding left right and top bottom  */
+	margin-top: 80px;/* margin top */
+}
+.footer .footer-left,   /* 3 parts of the footer  */
+.footer .footer-center,
+.footer .footer-right{
+	display: inline-block;/* stack, element as a block element */
+	vertical-align: top;/* aligned with the top of the tallest element on the line */
+}
+
+/* Footer left */
+
+.footer .footer-left{
+	width: 40%; /* width  */
+}
+
+.footer .footer-links{ /*footer links */
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer .footer-links a{ /*footer links a tags*/
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;  /* let coolour come through  */
+}
+
+
+/* Footer Center */
+
+.footer .footer-center{
+	width: 35%;
+}
+
+.footer .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+
+.footer .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+.footer .footer-right{
+	width: 20%;
+}
+ 
     
 </style>
 </head>
 <body>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <%= link_to image_tag('http://www.dancetones.org/images/client/dancetones-studios.png'), root_path %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,32 +151,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+     <li class="nav-item" style="margin-right:20px;">
+        <a class="nav-link"><%= link_to "Home",  root_path %></a>
       </li>
-      <li class="nav-item">
+      <!--<li class="nav-item">
          <li><%= link_to "classes", static_pages_classes_path %></li>
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Link</a> -->
       </li>
-      <li class="nav-item">
-         <li><%= link_to "Danceclasses",  danceclasses_path %></li>
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item" style="margin-right:20px;">
+        <a class="nav-link"><%= link_to "Danceclasses",  danceclasses_path %></a>
       </li>
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <li class="nav-item" style="margin-right:20px;">
+        <a class="nav-link"><%= link_to "About",  root_path %></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+     
     </ul>
   
   </div>
@@ -74,46 +179,68 @@
 <% end %>
 </p>
 </nav>
+<div class="home_page_main_image"></div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron bg-cover">
-      <div class="container">
-        <h1 class="display-3">Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
+<section  class="clearfix" style="background-color:#f3f3f3;padding:50px;">
+		<div class="main-content">
+		  <%= image_tag ("beach.jpg") %>
+		<h3>Welcome to our Studio</h3>
+		<a class="home-btn" href="/danceclasses">See What You Can Do...</a>
+		</div>
+      </section>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
+<!-- footer area -->
+<footer class="footer">
 
-      <hr>
+			<div class="footer-left">
+         <%= image_tag ("dancetones-studios-logo.png") %>
 
-      <footer>
-         <% if current_user.try(:admin?) %>
-       
- <h1>hi admin</h1>
-<% end %>
-        <p>&copy; Company 2017</p>
-      </footer>
-    </div> <!-- /container -->
+				<p class="footer-links">
+					<a href="index.html">Home</a>
+					·
+					<a href="classes.html">Classes</a>
+					·
+					<a href="gallery.html">Gallery</a>
+					·
+					<a href="contact.html">Contact</a>
+
+				</p>
+
+				<p class="footer-company-name">DanceTones Studios &copy; 2017</p>
+			</div>
+
+			<div class="footer-center">
+
+				 <div class="social3">
+					<a class="fa fa-map-marker" href="#"></a>
+               	<p><span>24, Newbridge Industrial Estate, Athgarvan Rd, Kilbelin, Newbridge, Co. Kildare</span></p> <br>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<a href="tel:+(045)434844" style="color:white">045 434 844</a>
+				</div>
+
+
+
+			</div>
+
+			<div class="footer-right">
+
+                <div class="social2">
+					<a class="fa fa-envelope" href="#"></a>
+					<p style="display:inline-block; color:white"> info@dancetones.ie </p> <br>
+				</div>
+
+				<div class="social">
+					<a class="fa fa-facebook" title="" target="_blank" href="https://www.facebook.com/dancetones/"></a>
+					<p style="display:inline-block; color:white"> Facebook </p>
+				</div>
+
+			</div>
+
+		</footer>
+
 </body>
 <script>
 

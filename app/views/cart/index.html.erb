@@ -22,15 +22,18 @@
        
     </tr>
     <tr> <% total += quantity * danceclass.price %> 
-        <td>
-            Grand Total: <%= number_to_currency(total, :unit => "€") %>
+       <!-- <td>
+           Grand Total: <%= number_to_currency(total, :unit => "€") %>
           
             
-        </td>
+        </td> -->
         
     </tr>
     
     <% end %>
+    <td>
+    Grand Total: <%= number_to_currency(total, :unit => "€") %>
+    </td>
     
     <br>
    

@@ -1,42 +1,133 @@
 <p id="notice"><%= notice %></p>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <%= link_to image_tag('http://www.dancetones.org/images/client/dancetones-studios.png'), root_path %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     <li class="nav-item" style="margin-right:20px;">
+        <a class="nav-link"><%= link_to "Home",  root_path %></a>
+      </li>
+      <!--<li class="nav-item">
+         <li><%= link_to "classes", static_pages_classes_path %></li>
+        <a class="nav-link" href="#">Link</a> -->
+      </li>
+      <li class="nav-item" style="margin-right:20px;">
+        <a class="nav-link"><%= link_to "Danceclasses",  danceclasses_path %></a>
+      </li>
+        <li class="nav-item" style="margin-right:20px;">
+        <a class="nav-link"><%= link_to "About",  root_path %></a>
+      </li>
+     
+    </ul>
+  
+  </div>
+  <p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
+</nav>
 
 
 
-<h1>Danceclasses</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Image url</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @danceclasses.each do |danceclass| %>
-      <tr>
-        <td><%= danceclass.title %></td>
-        <td><%= danceclass.description %></td>
-        <td><%= danceclass.price %></td>
-        <td> <%= link_to (image_tag danceclass.image_url, :class => "itemholsIm"), danceclass %></td>
-        <td><%= danceclass.category %></td>
-        <td><%= link_to 'Show', danceclass %></td>
+<div class="float-right">
+<%= link_to 'View Cart', cart_path, :class => "btn btn-info"%>
+</div>
+ <div class="row text-center">
+ <% @danceclasses.each do |danceclass| %>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <%= link_to (image_tag danceclass.image_url, :class => "itemholsIm"), danceclass %>
+            <div class="card-body">
+              <h4 class="card-title">Title: <%= danceclass.title %></h4>
+              <p class="card-text">Description: <%= danceclass.description %></p>
+              <p class="card-text">Category: <%= danceclass.category %></p>
+              <p class="card-text">Price: €<%= danceclass.price %></p>
+              <% if current_user.try(:admin?) %>
         <td><%= link_to 'Edit', edit_danceclass_path(danceclass) %></td>
         <td><%= link_to 'Destroy', danceclass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><a href="/cart/<%= danceclass.id %>" class="button">Add To Cart</a></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+         <% end %>
+            </div>
+            <div class="card-footer">
+              <%= link_to 'Find Out More', danceclass, :class => "btn btn-info"%>
+              <hr>
+               <a href="/cart/<%= danceclass.id %>" class="btn btn-success">Add To Cart</a>
+              
+            </div>
+          </div>
+           </div>
+           <% end %>
+       
+
+<br>
+<% if current_user.try(:admin?) %>
+       
+		<%= link_to 'Add Dance class', new_danceclass_path %>
+	   <% end %>
 
 <br>
 
-<%= link_to 'Add Dance class', new_danceclass_path %>
-<br>
-<%= link_to 'Back To Cart', cart_path %>
-<br>
-<%= link_to 'Home', root_path %>
+
+
+<!-- footer area -->
+<footer class="footer">
+
+			<div class="footer-left">
+         <%= image_tag ("dancetones-studios-logo.png") %>
+
+				<p class="footer-links">
+					<a href="index.html">Home</a>
+					·
+					<a href="classes.html">Classes</a>
+					·
+					<a href="gallery.html">Gallery</a>
+					·
+					<a href="contact.html">Contact</a>
+
+				</p>
+
+				<p class="footer-company-name">DanceTones Studios &copy; 2017</p>
+			</div>
+
+			<div class="footer-center">
+
+				 <div class="social3">
+					<a class="fa fa-map-marker" href="#"></a>
+               	<p><span>24, Newbridge Industrial Estate, Athgarvan Rd, Kilbelin, Newbridge, Co. Kildare</span></p> <br>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<a href="tel:+(045)434844" style="color:white">045 434 844</a>
+				</div>
+
+
+
+			</div>
+
+			<div class="footer-right">
+
+                <div class="social2">
+					<a class="fa fa-envelope" href="#"></a>
+					<p style="display:inline-block; color:white"> info@dancetones.ie </p> <br>
+				</div>
+
+				<div class="social">
+					<a class="fa fa-facebook" title="" target="_blank" href="https://www.facebook.com/dancetones/"></a>
+					<p style="display:inline-block; color:white"> Facebook </p>
+				</div>
+
+			</div>
+
+		</footer>
+
