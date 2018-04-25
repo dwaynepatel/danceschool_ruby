@@ -5,25 +5,51 @@ class DanceclassesController < ApplicationController
   # GET /danceclasses.json
   def index
     @danceclasses = Danceclass.all
+      # pass the information to the view page of cart 
+      if session[:cart] then
+        @cart = session[:cart]
+      else
+        @cart = {}
+      end  
   end
 
   # GET /danceclasses/1
   # GET /danceclasses/1.json
   def show
+      if session[:cart] then
+        @cart = session[:cart]
+      else
+        @cart = {}
+      end  
   end
 
   # GET /danceclasses/new
   def new
     @danceclass = Danceclass.new
+      if session[:cart] then
+        @cart = session[:cart]
+      else
+        @cart = {}
+      end  
   end
 
   # GET /danceclasses/1/edit
   def edit
+      if session[:cart] then
+        @cart = session[:cart]
+      else
+        @cart = {}
+      end  
   end
 
   # POST /danceclasses
   # POST /danceclasses.json
   def create
+      if session[:cart] then
+        @cart = session[:cart]
+      else
+        @cart = {}
+      end  
     @danceclass = Danceclass.new(danceclass_params)
 
     respond_to do |format|
@@ -40,6 +66,11 @@ class DanceclassesController < ApplicationController
   # PATCH/PUT /danceclasses/1
   # PATCH/PUT /danceclasses/1.json
   def update
+    if session[:cart] then
+        @cart = session[:cart]
+    else
+        @cart = {}
+    end  
     respond_to do |format|
       if @danceclass.update(danceclass_params)
         format.html { redirect_to @danceclass, notice: 'Danceclass was successfully updated.' }
@@ -56,14 +87,25 @@ class DanceclassesController < ApplicationController
   def destroy
     @danceclass.destroy
     respond_to do |format|
-      format.html { redirect_to danceclasses_url, notice: 'Danceclass was successfully destroyed.' }
+      format.html { redirect_to danceclasses_url }
       format.json { head :no_content }
     end
+    if session[:cart] then
+      @cart = session[:cart]
+    else
+      @cart = {}
+    end 
+    
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_danceclass
+      if session[:cart] then
+        @cart = session[:cart]
+      else
+        @cart = {}
+      end  
       @danceclass = Danceclass.find(params[:id])
     end
 

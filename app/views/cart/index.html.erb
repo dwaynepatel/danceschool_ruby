@@ -3,8 +3,21 @@
 
 </style>
  <%= render 'layouts/nav' %>
- <div id="itemsContainer">
-<table id="customers">
+ <div style="height:50px;"></div>
+ <div class="container">
+<table id="customers" class="table table-bordered">
+      <thead>
+      <tr>
+        <th></th>
+        <th>discription</th>
+        <th></th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>amount</th>
+        
+      </tr>
+    </thead>
+    <tbody>
     <% total = 0 %>
     <% @cart.each do |id, quantity | %>
     
@@ -24,26 +37,15 @@
         <td><%= number_to_currency(quantity * danceclass.price, :unit => "€") %></td>
        
     </tr>
-    <tr> <% total += quantity * danceclass.price %> 
-       <!-- <td>
-           Grand Total: <%= number_to_currency(total, :unit => "€") %>
-          
-            
-        </td> -->
-        
-    </tr>
-    
+    <tfoot>
+      <% total += quantity * danceclass.price %>
     <% end %>
-    <td>
-    Grand Total: <%= number_to_currency(total, :unit => "€") %>
-    </td>
-    
-    <br>
-   
-    </br>
-    
-    
-</table>
 
+        
+    </tfoot>
+    <tbody>
+</table>
+ Grand Total: <%= number_to_currency(total, :unit => "€") %>
+<%= link_to "checkout" ,static_pages_checkout_path %> </td>
 </div>
 

@@ -1,7 +1,13 @@
 <p id="notice"><%= notice %></p>
 <%= render 'layouts/nav' %>
+
+<div style="height:50px;"></div>
 <div class="float-right">
-<%= link_to 'View Cart', cart_path, :class => "btn btn-info"%>
+<%= link_to 'View Cart', cart_path, :class => "btn btn-info btn-sm"%><br><br>
+<% if current_user.try(:admin?) %>
+       
+		<%= link_to 'Add Dance class', new_danceclass_path, :class => "btn btn-info btn-sm" %>
+	   <% end %>
 </div>
  <div class="row text-center">
  <% @danceclasses.each do |danceclass| %>
@@ -30,15 +36,10 @@
        
 
 <br>
-<% if current_user.try(:admin?) %>
-       
-		<%= link_to 'Add Dance class', new_danceclass_path %>
-	   <% end %>
-
-<br>
 
 
 
+</div>
 <!-- footer area -->
 <footer class="footer">
 
