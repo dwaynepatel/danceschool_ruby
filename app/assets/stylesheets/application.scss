@@ -1,142 +1,16 @@
-@import "bootstrap";
- .bg-cover {
-  
-        background:  url('https://i.ytimg.com/vi/RJQ8ipEQRVU/maxresdefault.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-    }
-     .navbar-brand {
-  
-        background:  url('http://www.dancetones.org/images/client/dancetones-studios.png') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-    }
-    
-.home_page_main_image{  /* banner image on home page  */
-height:600px; /* height */
- width:100%;/* full width */
- background:  url('http://www.stardanceschool.com/images/kids-dance-classes.jpg') no-repeat top center fixed; 
- background-size: contain;/*Resize the background image to make sure the image is fully visible  */
-  background-position: 0px 50px;
-	}
-	
-	.main-content{
-	
-		position: relative;/* positioned relative to its normal position */
-		text-align: center;/* text in the center */
-		color: white;/*colour of text */
-	}
-
-.main-content img{  /* main image on home restrict the height and width   */
-	max-height: 1000px; /*max height of image */
-}
-.main-content h3 {
-    position: absolute; /*positioned relative to its first positioned ancestor  */
-    top: 70px;
-	left: 400px;
-	font-family: "Roboto";
-	font-weight: 500;
-	font-size: 80px;
-}
-.home-btn {   /* action button on home page  */
-	position: absolute;/*positioned relative to its first positioned ancestor  */
-	background: #FF5400 none repeat scroll 0% 0%; /* background colour dont repeat add a scroll and position 0 */
-	text-decoration: none;
-	color: #FFF !important;
-	margin-top: 430px;
-	width: 250px;
-	padding: 12px;
-	border-radius: 30px;
-	top: 10%;
-	left: 900px;
-	font-size: 20px;
-	text-align: center;
-  }
-  /***********************************    FOOTER   **************************************************/
-
-.footer{  /* general footer styles  */
-	background-color:#F50;  /* background colour */
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12); /* add a shadow */
-	box-sizing: border-box;/* Include padding and border in the element's total width and height */
-	width: 100%; /*full width  */
-	text-align: left;/*keep to the left  */
-	font: bold 16px sans-serif;/*bold text size and font  */
-	padding: 55px 50px; /*padding left right and top bottom  */
-	margin-top: 80px;/* margin top */
-}
-.footer .footer-left,   /* 3 parts of the footer  */
-.footer .footer-center,
-.footer .footer-right{
-	display: inline-block;/* stack, element as a block element */
-	vertical-align: top;/* aligned with the top of the tallest element on the line */
-}
-
-/* Footer left */
-
-.footer .footer-left{
-	width: 40%; /* width  */
-}
-
-.footer .footer-links{ /*footer links */
-	color:  #ffffff;
-	margin: 20px 0 12px;
-	padding: 0;
-}
-
-.footer .footer-links a{ /*footer links a tags*/
-	display:inline-block;
-	line-height: 1.8;
-	text-decoration: none;
-	color:  inherit;  /* let coolour come through  */
-}
-
-
-/* Footer Center */
-
-.footer .footer-center{
-	width: 35%;
-}
-
-.footer .footer-center i{
-	background-color:  #33383b;
-	color: #ffffff;
-	font-size: 25px;
-	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 42px;
-	margin: 10px 15px;
-	vertical-align: middle;
-}
-
-
-.footer .footer-center p{
-	display: inline-block;
-	color: #ffffff;
-	vertical-align: middle;
-	margin:0;
-}
-
-.footer .footer-center p span{
-	display:block;
-	font-weight: normal;
-	font-size:14px;
-	line-height:2;
-}
-.footer .footer-right{
-	width: 20%;
-}
-
-.navbar a{
-	color:white;
-}
-.color{
-	color:white;
-}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";  // needed and global

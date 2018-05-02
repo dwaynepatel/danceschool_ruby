@@ -1,45 +1,45 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- .intro-2 {
-    background: url("https://mdbootstrap.com/img/Photos/Others/architecture.jpg")no-repeat center center;
-    background-size: cover;
+     
+/**************************************** home page ******************************************************/
+.home_page_main_image{  /* banner image on home page  */
+height:600px; /* height */
+ width:100%;/* full width */
+ background:  url('http://www.stardanceschool.com/images/kids-dance-classes.jpg') no-repeat top center fixed; 
+ background-size: contain;/*Resize the background image to make sure the image is fully visible  */
+  background-position: 0px 50px;
+	}
+	
+	.main-content{
+	
+		position: relative;/* positioned relative to its normal position */
+		text-align: center;/* text in the center */
+		color: white;/*colour of text */
+	}
+
+.main-content img{  /* main image on home restrict the height and width   */
+	max-height: 1000px; /*max height of image */
 }
-.btn .fa {
-    margin-left: 3px;
+.main-content h3 {
+    position: absolute; /*positioned relative to its first positioned ancestor  */
+    top: 70px;
+	left: 400px;
+	font-family: "Roboto";
+	font-weight: 500;
+	font-size: 80px;
 }
-.top-nav-collapse {
-    background-color: #424f95 !important; 
-}
-.navbar:not(.top-nav-collapse) {
-    background: transparent !important;
-}
-@media (max-width: 768px) {
-    .navbar:not(.top-nav-collapse) {
-        background: #424f95 !important;
-    } 
-}
-h6 {
-    line-height: 1.7;
-}
-.hm-gradient .full-bg-img {
-    background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
-    background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.6)), to(rgba(29, 210, 177, 0.6)));
-    background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
-    background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%); 
-}
-@media (max-width: 450px) {
-    .margins {
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-}
-@media (max-width: 740px) {
-    .full-height,
-    .full-height body,
-    .full-height header,
-    .full-height header .view {
-        height: 1040px; 
-    } 
-}                    
+.home-btn {   /* action button on home page  */
+	position: absolute;/*positioned relative to its first positioned ancestor  */
+	background: #FF5400 none repeat scroll 0% 0%; /* background colour dont repeat add a scroll and position 0 */
+	text-decoration: none;
+	color: #FFF !important;
+	margin-top: 430px;
+	width: 250px;
+	padding: 12px;
+	border-radius: 30px;
+	top: 10%;
+	left: 900px;
+	font-size: 20px;
+	text-align: center;
+  }
